@@ -147,7 +147,6 @@
 .curriculum-container{
     background: url(/assets/bg.png);
     margin: 0 auto;
-    gap: 80px;
     align-items: center;
     display: flex;
     flex-direction: column;
@@ -223,33 +222,94 @@
 }
 
 .slider{
-    width: 60px;
-    height: 60px;
-    border: none;
+  display: flex;
+  border: none;
+  max-width: 130px;
+  gap: 10px;
+  margin-top: 80px;
+  
 }
 
 .previous-slider{
-    font-size: 1.5rem;
-    font-weight: 900;
-    font-family: Font Awesome 5 Free;
-    color: rgb(255, 255, 255);
-    border-radius: 30px;
-    background: rgb(254, 163, 1);
+
+  border-radius: 30px;
+  background: rgb(254, 163, 1);
 }
 .next-slider{
-    font-size: 1.5rem;
-    font-weight: 900;
-    font-family: Font Awesome 5 Free;
-    color: rgb(255, 255, 255);
+
     border-radius: 30px;
     background: rgb(254, 163, 1);
 }
+/* Container styling */
+.articles-section {
+  display: grid;
+  grid-template-columns: repeat(5, 1fr); 
+  gap: 20px;
+  max-width: 1440px;
+  padding: 60px 0px 60px 0px;
+  background: url(/assets/bg.png),linear-gradient(0.00deg, rgba(254, 163, 1, 0.3),rgba(255, 255, 255, 0.3) 100%);
+}
+
+/* General article styling */
+.article {
+  overflow: hidden;
+  background-color: white;
+  position: relative;
+  max-width: 1160px;
+  margin: 0 auto;
+}
+
+.article img {
+  width: 100%;
+  height: auto;
+  display: block;
+}
+
+.article-details {
+  padding: 15px;
+}
+
+.article-date {
+  font-size: 14px;
+  color: #777;
+  margin-bottom: 8px;
+}
+
+.article-title {
+  font-size: 18px;
+  font-weight: bold;
+  color: #333;
+  margin: 10px 0;
+}
+
+.article-description {
+  font-size: 14px;
+  color: #555;
+}
+
+
+
+/* Featured article (left side) */
+.article.featured {
+  grid-column: span 3; /* Spans 3 columns */
+  grid-row: span 2; /* Spans 2 rows */
+  display: flex;
+  flex-direction: column;
+}
+
+/* Smaller articles */
+.article.small {
+  grid-column: span 1; /* Takes 1 column */
+}
+
 
 /* footer styles */
 .footer{
     max-width: 1440px;
     color: white;
     background: rgb(1, 172, 253);
+    display: flex;
+    justify-content: center;
 }
 .footer-logo-description{
     max-width: 1070px;
@@ -274,9 +334,16 @@
 /* responsive design */
 @media screen and (max-width:576px){
    /* nav */
+   .navbar{
+    box-sizing: border-box;
+    border-bottom: 0.5px solid rgb(254, 163, 1);
+   }
   .nav {
     display: none;
     flex-direction: column;
+
+
+
       }
   .menu-checkbox:checked .menu-toggle .nav {
      display: flex;
